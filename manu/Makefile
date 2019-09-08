@@ -6,13 +6,13 @@
 #    By: tde-brit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/24 14:58:04 by tde-brit          #+#    #+#              #
-#    Updated: 2019/09/05 14:19:48 by mfierlaf         ###   ########.fr        #
+#    Updated: 2019/09/04 15:45:13 by tde-brit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
 
-SRCS = main.c ft_ls.c option.c
+SRCS = main.c listing.c option.c list_init.c
 
 HEADERS = ftls.h
 
@@ -23,7 +23,7 @@ all: $(NAME)
 $(NAME):
 	@make re -C ./libft
 	@make clean
-	@gcc $(FLAGS) -o $(NAME) $(SRCS) -L libft/ -lft
+	@gcc $(FLAGS) -o $(NAME) $(SRCS) -L libft/ -lft -fsanitize=address
 
 
 clean:
