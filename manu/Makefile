@@ -12,7 +12,8 @@
 
 NAME = ft_ls
 
-SRCS = main.c listing.c option.c list_init.c
+SRCS = main.c listing.c list_init.c print_l.c little_l.c high_r.c little_r.c \
+freelstfiles.c freelstnames.c freeoptions.c print.c
 
 HEADERS = ftls.h
 
@@ -23,7 +24,7 @@ all: $(NAME)
 $(NAME):
 	@make re -C ./libft
 	@make clean
-	@gcc $(FLAGS) -o $(NAME) $(SRCS) -L libft/ -lft -fsanitize=address
+	@gcc $(FLAGS) -o $(NAME) $(SRCS) -L libft/ -lft
 
 
 clean:
